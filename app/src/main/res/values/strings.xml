@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Laser Manual</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">(ಠ╭╮ಠ)</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Настройки</string>
+    <string name="text_size">Размер текста</string>
+
+    <string name="menu_materials">МАТЕРИАЛЫ</string>
+    <string name="menu_service">СЕРВИС</string>
+    <string name="menu_machines">ОБОРУДОВАНИЕ</string>
+    <string name="menu_yoba">YOBA</string>
+
+    <string name="rowmark">
+        Данный материал относится к серии пластиков Rowmark "LaserLights" Это тонкий самоклеящийся двухслойный пластик для фронтальной лазерной гравировки.
+    </string>
+    <string name="rowmark2">
+        Та же херь, ток разрушается при попытке отлепить))0
+    </string>
+    <string name="steel">
+        нержавейко ууу бля
+    </string>
+    <string name="paintMetal">
+        железку покрасили, и теперь нужно прожечь один слой краски, чтобы стало красивошно . . .
+    </string>
+    <string name="wood">
+        вырезаем хуи из фанеры
+    </string>
+    <string name="ftoroplast">
+        режем прокладки, облегчая жызнб слесарям (ядовито, нах)
+    </string>
+    <string name="viniplast">
+        крутой материал, хорошо режется и гравируется, ток солнце не любит
+    </string>
+    <string name="trafaret">
+        обложки для трафаретов - хоть из балончика хуи рисуй на заборах, хоть платы делай
+    </string>
+    <string name="vraschenie">
+        рисуем на цилиндрах
+    </string>
+    <string name="polycarbonat">
+        красиво матуем стекла, которые ушли в брак
+    </string>
+    <string name="ruber">
+        режем вонючую резину, которую лень резать слесарям
+    </string>
+    <string name="nomakon">
+        микропрокладки для микросборки
+    </string>
+
+    <string name="venus">
+        йобовый тайванец
+    </string>
+    <string name="yhg5030">
+        большой бро
+    </string>
+    <string name="pst1212">
+        кому мангал?
+    </string>
+
+    <string name="mirrors">
+        будь с ними нежен, семпай
+    </string>
+    <string name="dirt">
+        станок - не твоя грязная сучка
+    </string>
+    <string name="lubrication">
+        со смазкой приятнее
+    </string>
+    <string name="soft">
+        сука блять ну кто придумал этот бляцкий софт который постоянно вылетает и выдает ошибки
+    </string>
+
+    <string name="yobaNow">
+        ну ето тест
+    </string>
+
+</resources>

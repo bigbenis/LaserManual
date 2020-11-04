@@ -1,0 +1,117 @@
+package com.spurdo.lasermanual;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
+import com.spurdo.lasermanual.settings.SettingsActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private AppBarConfiguration mAppBarConfiguration;
+    private ListView list;
+    private String[] array;
+    private ArrayAdapter<String> adapter;
+    private DrawerLayout drawer;
+    private Toolbar toolbar;
+    private int categoryIndex;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        list = findViewById(R.id.listView);
+        array = getResources().getStringArray(R.array.materials);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<String>(Arrays.asList(array)));
+        list.setAdapter(adapter);
+
+        //SIDE MENU
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, TextContentActivity.class);
+                intent.putExtra("category", categoryIndex);
+                intent.putExtra("position", position);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        toolbar.setTitle(R.string.menu_materials);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.nav_material) {
+            fillArray(R.string.menu_materials,R.array.materials,0);
+        }
+        else if (id == R.id.nav_machines) {
+            fillArray(R.string.menu_machines,R.array.machines,1);
+        }
+        else if (id == R.id.nav_service) {
+            fillArray(R.string.menu_service,R.array.service,2);
+        }
+        else if (id == R.id.nav_yoba) {
+            //Toast.makeText(this, "ОБОСРАЛСЯ", Toast.LENGTH_SHORT).show();
+            fillArray(R.string.menu_yoba,R.array.yoba,3);
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    private void fillArray (int title, int arrayList, int index) {
+        toolbar.setTitle(title);
+        array = getResources().getStringArray(arrayList);
+        adapter.clear();
+        adapter.addAll(array);
+        adapter.notifyDataSetChanged();
+        categoryIndex = index;
+
+    }
+}

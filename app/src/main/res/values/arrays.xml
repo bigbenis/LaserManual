@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="materials">
+        <item>Пластик двухслойный для этикеток</item>
+        <item>Пластик двухслойный для разрушаемых этикеток</item>
+        <item>Коррозионностойкая сталь</item>
+        <item>Окрашенный металл</item>
+        <item>Фанера</item>
+        <item>Фторопласт</item>
+        <item>Винипласт</item>
+        <item>Обложки (трафарет)</item>
+        <item>Гравировка на телах вращения</item>
+        <item>Поликарбонат (оргстекло)</item>
+        <item>Резина</item>
+        <item>Nomakon (теплопровод)</item>
+    </string-array>
+
+    <string-array name="machines">
+        <item>VENUS II 12W LASER</item>
+        <item>YH-G5030 40W LASER</item>
+        <item>PST-1212 60A PLASMA</item>
+    </string-array>
+
+    <string-array name="service">
+        <item>ЮСТИРОВКА ЗЕРКАЛ</item>
+        <item>ОЧИСТКА ОТ ПЫЛИ И ГРЯЗИ</item>
+        <item>СМАЗКА ШВП И НАПРАВЛЯЮЩИХ</item>
+        <item>ПЕРЕУСТАНОВКА ПРОГРАММ</item>
+    </string-array>
+
+    <string-array name="yoba">
+        <item>НУ И НАХУЙ ЭТО ВСЁ?</item>
+    </string-array>
+
+    <string-array name="MainTextSizeArray">
+        <item>Мелкий шрифт</item>
+        <item>Средний шрифт</item>
+        <item>Большой шрифт</item>
+    </string-array>
+
+</resources>
